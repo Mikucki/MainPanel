@@ -23,7 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to left, #cac6c2, #2d2d2a);
+  background: rgb(164, 156, 156);
   color: rgb(219, 209, 209);
   height: 10vh;
   padding: 1em 0;
@@ -58,19 +58,25 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
   transition: color 1s;
   font-weight: 700;
 }
 
 li {
   list-style-type: none;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   height: 10vh;
-  width: 120px;
-  transition: background-color 1s;
+  transition: backgro1nd-color 1s;
+  border-left: 2px solid rgb(139, 135, 135);
+  width: 20%;
+}
+
+ul {
+  width: 50vw;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 li:hover {
@@ -117,11 +123,20 @@ a:hover {
 }
 
 .logo {
+  font-size: 1em;
+  margin-left: 0.7em;
   font-family: "Righteous", cursive;
-  color: rgb(181, 174, 174);
+  color: black;
+  border-left: 0.25em solid black;
+  border-top: 0.1875em solid lightgrey;
+  border-radius: 0.8em;
+  padding: 0.3em 0.6em;
 }
 
 @media (max-width: 700px) {
+  .logo {
+    font-size: 0.75em;
+  }
   .top-nav {
     padding: 1em;
   }
