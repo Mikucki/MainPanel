@@ -1,14 +1,33 @@
 import "../src/main.css";
 import * as THREE from "three";
 import * as dat from "dat.gui";
-import { DirectionalLight } from "three";
+import { DirectionalLight, Texture } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import salon from "../src/images/salon.jpg";
+import choinka from "../src/images/choinka.jpg";
+import kuchnia from "../src/images/kuchnia.jpg";
+import lazienka from "../src/images/lazienka.jpg";
+import salon2 from "../src/images/salon2.jpg";
+import konsola from "../src/images/konsola.jpg";
 
 const scene = new THREE.Scene();
 
+const textureLoader = new THREE.TextureLoader();
+
+const boxMaterials = [
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(salon) }),
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(choinka) }),
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(kuchnia) }),
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(lazienka) }),
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(salon2) }),
+  new THREE.MeshBasicMaterial({ map: textureLoader.load(konsola) }),
+];
+
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshStandardMaterial({ color: "#ff0000" });
-const box = new THREE.Mesh(geometry, material);
+const material = new THREE.MeshStandardMaterial({
+  color: "#ffffff",
+});
+const box = new THREE.Mesh(geometry, boxMaterials);
 scene.add(box);
 
 // Camera
@@ -18,20 +37,14 @@ const sizes = {
   height: 600,
 };
 
-const axiesHelper = new THREE.AxesHelper(1);
-scene.add(axiesHelper);
-
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 camera.position.z = 6;
 camera.position.y = 3;
 camera.position.x = 3;
 
-let step = 0;
-let speed = 0;
-
 function animate() {
-  box.rotation.x += 0.02;
-  box.rotation.y += 0.02;
+  box.rotation.x += 0.01;
+  box.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 }
@@ -47,35 +60,16 @@ renderer.setSize(sizes.width, sizes.height);
 
 renderer.setAnimationLoop(animate);
 
-const gui = new dat.GUI();
-
-const options = {
-  sphereColor: "#ffea00",
-  wireframe: true,
-  speed: 0.01,
-};
-
 const orbit = new OrbitControls(camera, renderer.domElement);
 orbit.update();
-
-gui.addColor(options, "sphereColor").onChange(function (e) {
-  box.material.color.set(e);
-});
-
-gui.add(options, "wireframe").onChange(function (e) {
-  box.material.wireframe = e;
-});
-
-gui.add(options, "speed", 0);
 
 const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 scene.add(directionalLight);
-directionalLight.position.set(10, 10, 0);
+directionalLight.position.set(3, 10, 0);
 
-const dLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
-scene.add(dLightHelper);
+renderer.setClearColor(0xffffff);
 
 renderer.render(scene, camera);

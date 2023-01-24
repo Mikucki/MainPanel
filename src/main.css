@@ -191,6 +191,18 @@ i {
   }
 }
 
+.convas1 {
+  display: flex;
+  width: 100vw;
+  background-color: white;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .webgl {
-  color: blue;
+  width: 50vw;
+}
+
+.discription {
+  width: 50%;
 }
