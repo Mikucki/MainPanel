@@ -196,13 +196,5 @@ i {
   width: 100vw;
   background-color: white;
   align-items: center;
-  justify-content: flex-end;
-}
-
-.webgl {
-  width: 50vw;
-}
-
-.discription {
-  width: 50%;
+  justify-content: center;
 }

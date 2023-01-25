@@ -30,21 +30,40 @@ const material = new THREE.MeshStandardMaterial({
 const box = new THREE.Mesh(geometry, boxMaterials);
 scene.add(box);
 
+function resizeCanvasToDisplaySize() {
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+
+  if (canvas.width !== width || canvas.height !== height) {
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  }
+}
+
 // Camera
 
 const sizes = {
-  width: 800,
-  height: 600,
+  width: 400,
+  height: 400,
 };
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-camera.position.z = 6;
-camera.position.y = 3;
-camera.position.x = 3;
+camera.position.z = 3;
 
 function animate() {
-  box.rotation.x += 0.01;
   box.rotation.y += 0.01;
+  let fixedNum = box.rotation.y.toFixed(0);
+  let fixedNum2 = box.rotation.z.toFixed(2);
+  console.log(fixedNum);
+
+  if (Number(fixedNum) % 2 === 0) {
+    box.rotation.z += 0.1;
+  } else {
+    box.rotation.y += 0.1;
+  }
+  resizeCanvasToDisplaySize();
 
   renderer.render(scene, camera);
 }
@@ -52,16 +71,13 @@ function animate() {
 scene.add(camera);
 
 const canvas = document.querySelector(".webgl");
-console.log(canvas);
+
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
 
 renderer.setAnimationLoop(animate);
-
-const orbit = new OrbitControls(camera, renderer.domElement);
-orbit.update();
 
 const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
