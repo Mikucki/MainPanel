@@ -15,7 +15,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background-color: red;
+  background-color: blue;
 }
 
 * {
@@ -31,7 +31,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--light-grey);
+  background: rgb(207, 207, 207);
+  background: linear-gradient(
+    90deg,
+    rgba(207, 207, 207, 1) 19%,
+    rgba(152, 146, 146, 1) 64%
+  );
   color: var(--light-light-grey);
   height: 10vh;
   padding: 1em 0;
@@ -59,6 +64,10 @@ body {
   display: none;
 }
 
+.fa-instagram {
+  font-size: 1.4rem;
+}
+
 a {
   color: var(--black);
   text-decoration: none;
@@ -77,7 +86,11 @@ li {
   height: 10vh;
   transition: backgro1nd-color 1s;
   border-left: 2px solid var(--light-light-grey);
-  width: 20%;
+  width: 25%;
+}
+
+ul > ul {
+  display: flex;
 }
 
 ul {
@@ -138,6 +151,8 @@ a:hover {
   color: var(--black);
   border-left: 0.25em solid var(--black);
   border-top: 0.1875em solid var(--white);
+  border-bottom: 0.0000001em solid var(--black);
+  border-right: 0.0001em solid var(--white);
   border-radius: 0.8em;
   padding: 0.3em 0.6em;
 }
@@ -196,5 +211,27 @@ i {
   width: 100vw;
   background-color: white;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.webgl {
+  width: 50%;
+}
+
+.discription {
+  color: black;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.discription {
+  padding: 2em;
+  text-align: center;
+}
+
+.button {
 }
