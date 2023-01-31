@@ -3,6 +3,7 @@ import * as THREE from "three";
 import * as dat from "dat.gui";
 import { DirectionalLight, Scene, Texture } from "three";
 import modern from "./images/Modern.png";
+import Logo from "./images/Logo.png";
 
 const scene = new THREE.Scene();
 

@@ -104,10 +104,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.7s;
+  transition: background-color translate 0.7s;
   font-weight: 500;
   text-align: center;
   border: 1px solid white;
+}
+
+li:hover {
+  transform: scale(1.05);
 }
 
 a:hover {
@@ -126,7 +130,8 @@ a:hover {
 .instagram-tag {
   border-radius: 50%;
   padding: 0em 0em;
-  width: 50.5px;
+  height: 7vh;
+  width: 7vh;
   border: 1px solid white;
 }
 
@@ -146,6 +151,7 @@ li {
   margin: 0;
   overflow: hidden;
   height: 10vh;
+  transition: transform 0.5s;
 }
 
 i {
