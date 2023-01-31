@@ -46,8 +46,7 @@ body {
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 2em;
 }
 
 .menu-button-container {
@@ -66,6 +65,36 @@ body {
 
 .fa-instagram {
   font-size: 1.4rem;
+  margin: 0;
+}
+
+.instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
 a {
@@ -75,39 +104,80 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: color 1s;
-  font-weight: 700;
+  transition: background-color 0.7s;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid white;
+}
+
+a:hover {
+  background-color: rgba(35, 16, 16, 0.5);
+}
+
+.fakebutton {
+  background-color: red;
+  width: 100%;
+  border-radius: 5px;
+  height: 70%;
+  background-color: rgba(35, 16, 16, 0.1);
+  padding: 0em 1.5em;
+}
+
+.instagram-tag {
+  border-radius: 50%;
+  padding: 0em 0em;
+  width: 50.5px;
+  border: 1px solid white;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 li {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   list-style-type: none;
   margin: 0;
   overflow: hidden;
   height: 10vh;
-  transition: backgro1nd-color 1s;
-  border-left: 2px solid var(--light-light-grey);
-  width: 25%;
 }
 
-ul > ul {
-  display: flex;
+i {
+  margin-right: 5px;
+}
+
+.spcialli {
+  flex-shrink: 0;
 }
 
 ul {
   width: 50vw;
   display: flex;
-  justify-content: right;
   align-items: center;
+  justify-content: right;
   overflow: hidden;
+  gap: 2vw;
+  white-space: nowrap;
 }
 
-li:hover {
-  background-color: var(--black);
+.line {
+  width: 100vw;
+  height: 0.5vh;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
-a:hover {
-  color: var(--red);
-}
 .menu-button,
 .menu-button::before,
 .menu-button::after {
@@ -155,10 +225,7 @@ a:hover {
   border-right: 0.0001em solid var(--white);
   border-radius: 0.8em;
   padding: 0.3em 0.6em;
-}
-
-i {
-  margin-right: 6px;
+  width: 100%;
 }
 
 @media (max-width: 700px) {
@@ -226,12 +293,10 @@ i {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 2em;
 }
 
 .discription {
   padding: 2em;
   text-align: center;
-}
-
-.button {
 }

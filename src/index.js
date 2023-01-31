@@ -2,6 +2,7 @@ import "../src/main.css";
 import * as THREE from "three";
 import * as dat from "dat.gui";
 import { DirectionalLight, Scene, Texture } from "three";
+import modern from "./images/Modern.png";
 
 const scene = new THREE.Scene();
 
@@ -9,6 +10,7 @@ const textureLoader = new THREE.TextureLoader();
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshStandardMaterial({
   color: "#808080",
+  map: textureLoader.load(modern),
 });
 const box = new THREE.Mesh(geometry, material);
 scene.add(box);
@@ -44,7 +46,7 @@ const mainLight = new THREE.AmbientLight(0xffffff, 0.1);
 scene.add(mainLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
-directionalLight.position.set(1, 1, 1);
+directionalLight.position.set(1, -1, 11);
 scene.add(directionalLight);
 
 renderer.setClearColor(0xffffff, 0);
