@@ -17,7 +17,7 @@ const box = new THREE.Mesh(geometry, material);
 scene.add(box);
 
 const sizes = {
-  width: 400,
+  width: 300,
   height: 400,
 };
 
