@@ -6,7 +6,7 @@ h2 {
 :root {
   --black: #0f0f0f;
   --white: #f2f2f2;
-  --light-light-grey: blue;
+  --light-light-grey: #d9d9d9;
   --light-grey: #a4a6a6;
   --red: #cf0210;
 }
@@ -299,6 +299,7 @@ i {
   justify-content: space-evenly;
   align-items: center;
   padding: 2em;
+  position: relative;
 }
 
 .discription {
@@ -409,36 +410,35 @@ i {
   list-style-type: none;
 }
 
-.container {
-  width: 246px;
-  overflow: hidden;
+span {
+  border-right: 0.05em solid red;
+  animation: caret 1s steps(1) infinite;
 }
-.container .text {
-  position: relative;
-  color: #4070f4;
-  font-size: 30px;
-  font-weight: 600;
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
-.container .text.first-text {
-  color: #fff;
-}
-.text.sec-text:before {
-  content: "";
+
+h1 {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--white);
-  border-left: 2px solid #4070f4;
-  animation: animate 4s steps(10) infinite;
+  left: 43%;
 }
-@keyframes animate {
-  40%,
-  60% {
-    left: 100%;
-  }
-  100% {
-    left: 0%;
-  }
+
+.title {
+  font-size: 2rem;
+  position: absolute;
+  left: 34.5%;
+}
+
+.title-2 {
+  font-size: 2rem;
+}
+
+.text-writing {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
 }
