@@ -17,11 +17,11 @@ scene.add(box);
 
 const sizes = {
   width: 300,
-  height: 400,
+  height: 250,
 };
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-camera.position.z = 3;
+camera.position.z = 2;
 
 function animate() {
   box.rotation.y += 0.01;

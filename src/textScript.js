@@ -1,4 +1,4 @@
-let dataText = ["Dzownimy.", "Piszemy", "Sprzątamy", "Kupujemy"];
+let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
 
 function typeWriter(text, i, fnCallback) {
   console.log(text);
