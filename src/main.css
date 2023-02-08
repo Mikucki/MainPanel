@@ -379,7 +379,7 @@ i {
 }
 
 span {
-  border-right: 0.05em solid red;
+  border-right: 0.05em solid var(--main-blue);
   animation: caret 1s steps(1) infinite;
 }
 
@@ -408,7 +408,6 @@ span {
   color: var(--main-blue);
 }
 
-/* TESTING */
 .card-body {
   padding: 1.5rem;
   display: flex;
@@ -420,18 +419,19 @@ span {
 
 .card-title {
   font-size: 22px;
-  height: 33%;
   display: flex;
   align-items: center;
+  color: white;
+  padding-top: 2vh;
 }
 
 .card-text {
   font-size: 14px;
   color: var(--light-grey);
-  height: 33%;
   display: flex;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 .card-icon i {
@@ -444,8 +444,16 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 5vh;
+  padding: 30vh 0;
   gap: 5vh;
+  position: relative;
+  z-index: 1;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    107deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(118, 45, 253, 1) 100%
+  );
 }
 
 .cards-ul li {
@@ -468,13 +476,14 @@ span {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: var(--light-grey);
-  border: 1px solid var(--light-grey);
-  margin-top: 1 0px;
+  background-color: var(--main-blue);
+  border: 1px solid var(--white);
   box-shadow: 5px 5px 10px var(--light-grey);
+  margin: auto;
 }
+
 .card {
-  background: #191c29;
+  background: #25336b;
   width: var(--card-width);
   height: var(--card-height);
   padding: 3px;
@@ -492,7 +501,7 @@ span {
 .card::before {
   content: "";
   width: 104%;
-  height: 102%;
+  height: 103%;
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate),
@@ -502,9 +511,10 @@ span {
   );
   position: absolute;
   z-index: -1;
-  top: -1%;
+  top: -1.5%;
   left: -2%;
   animation: spin 2.5s linear infinite;
+  opacity: 1;
 }
 
 .card::after {
@@ -514,10 +524,9 @@ span {
   left: 0;
   right: 0;
   z-index: -1;
-  height: 110%;
-  width: 110%;
-  margin: 0 auto;
-  transform: scale(0.8);
+  height: 100%;
+  width: 100%;
+
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(
     var(--rotate),
@@ -525,7 +534,6 @@ span {
     #3c67e3 43%,
     #4e00c2
   );
-  opacity: 1;
   transition: opacity 0.5s;
   animation: spin 2.5s linear infinite;
 }
@@ -537,4 +545,54 @@ span {
   100% {
     --rotate: 360deg;
   }
+}
+
+.custom-shape-divider-top-1675855739 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1675855739 svg {
+  position: relative;
+  display: block;
+  width: calc(210% + 1.3px);
+  height: 217px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1675855739 .shape-fill {
+  fill: #69a4e9;
+}
+
+/*BOTTOM */
+
+.custom-shape-divider-bottom-1675855763 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1675855763 svg {
+  position: relative;
+  display: block;
+  width: calc(210% + 1.3px);
+  height: 217px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1675855763 .shape-fill {
+  fill: #69a4e9;
+}
+
+.card:hover::before {
+  transform: scale(0.8);
+  background-color: rgb(22, 22, 75, 0.6);
 }
