@@ -600,3 +600,19 @@ span {
   transform: scale(0.8);
   background-color: rgb(22, 22, 75, 0.6);
 }
+
+.link-main {
+  color: var(--black);
+  text-decoration: none;
+  height: 100%;
+  display: inline-block;
+  font-weight: 700;
+  text-align: left;
+  border: none;
+  height: 15px;
+  padding: 0;
+}
+
+.logo-login {
+  width: 100vw;
+}

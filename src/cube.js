@@ -1,6 +1,5 @@
 import "../src/main.css";
 import * as THREE from "three";
-import * as dat from "dat.gui";
 import { DirectionalLight, Scene, Texture } from "three";
 import modern from "./images/Modern.png";
 

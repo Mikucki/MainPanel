@@ -7,15 +7,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/login.html",
+      inject: true,
+      filename: "login.html",
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          "style-loader", //3. Inject styles into DOM
-          "css-loader",
-        ],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
