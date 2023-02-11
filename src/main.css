@@ -613,6 +613,48 @@ span {
   padding: 0;
 }
 
-.logo-login {
-  width: 100vw;
+.wrapper {
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  background-color: red;
+  height: 30%;
+  margin: auto;
+  margin-top: 22vh;
+  gap: 3vh;
+  border-radius: 8px;
+}
+
+.fild {
+  height: 4vh;
+  border-radius: 6px;
+  border: 3px solid rgba(0, 0, 104, 0.308);
+}
+
+.username {
+  width: 30vw;
+}
+
+.password {
+  width: 30vw;
+}
+
+.login-button {
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(35, 16, 16, 0.3);
+  padding: 1em 1.5em;
+}
+
+@media (max-width: 1050px) {
+  .login {
+    width: 70%;
+    height: 30%;
+  }
 }
