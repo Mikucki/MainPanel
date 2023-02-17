@@ -822,4 +822,9 @@ span {
 }
 
 .signin {
+  border-radius: 5px;
+  height: 45%;
+  margin-right: 4vw;
+  background-color: rgba(35, 16, 16, 0.3);
+  padding: 0em 1.5em;
 }
