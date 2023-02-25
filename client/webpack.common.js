@@ -3,14 +3,14 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: "./src/index.js",
+    index: "../client/src/index.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/template.html",
+      template: "../client/src/template.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/login.html",
+      template: "../client/src/login.html",
       inject: true,
       filename: "login.html",
     }),
