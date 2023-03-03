@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
 h2 {
   vertical-align: center;
   text-align: center;
@@ -32,7 +35,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Righteous", cursive;
   font-family: "Roboto", sans-serif;
 }
 
@@ -226,7 +228,7 @@ i {
 .logo {
   font-size: 1em;
   margin-left: 0.7em;
-  font-family: "Righteous", cursive;
+  font-family: "Rubik", cursive;
   color: var(--black);
   border-left: 0.25em solid var(--black);
   border-top: 0.1875em solid var(--main-blue);

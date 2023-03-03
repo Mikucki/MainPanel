@@ -1,4 +1,4 @@
-import "../src/main.css";
+import "./index.css";
 let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
 
 function typeWriter(text, i, fnCallback) {

@@ -1,7 +1,9 @@
 import "../src/main.css";
 import * as THREE from "three";
-import { DirectionalLight, Scene, Texture } from "three";
-import modern from "./images/Modern.png";
+import DirectionalLight from "three";
+import Scene from "three";
+import Texture from "three";
+import modern from "./Modern.png";
 
 const scene = new THREE.Scene();
 
