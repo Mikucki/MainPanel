@@ -10,14 +10,9 @@ const Cube = () => {
   }
 
   return (
-    <Canvas onFrame={animate}>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <mesh ref={ref}>
-        <boxBufferGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={"#808080"} />
-      </mesh>
-    </Canvas>
+    <mesh>
+      <boxBufferGeometry attach="geometry" />
+    </mesh>
   );
 };
 

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const ProfilePage = () => {
   return (
     <div>
-      <section class="top-nav">
+      <section className="top-nav">
         <h2>
-          <Link class="logo logo-login" href="../src/template.html">
-            <i class="fa-solid fa-cube"></i> Modernbox Apartments
+          <Link className="logo logo-login" href="../src/template.html">
+            <i className="fa-solid fa-cube"></i> Modernbox Apartments
           </Link>
         </h2>
       </section>
-      <div class="line"></div>
+      <div className="line"></div>
     </div>
   );
 };
