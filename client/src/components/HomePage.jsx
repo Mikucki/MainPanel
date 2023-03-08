@@ -11,7 +11,7 @@ const HomePage = () => {
     <div>
       <section className="top-nav">
         <h2>
-          <Link className="logo" href="#">
+          <Link className="logo" to="/">
             <i className="fa-solid fa-cube"></i> Modernbox Apartments
           </Link>
         </h2>
@@ -21,22 +21,22 @@ const HomePage = () => {
         </label>
         <ul className="menu navbar-ul">
           <li className="nav-li">
-            <Link href="/" className="fakebutton">
+            <Link to="/" className="fakebutton">
               O nas
             </Link>
           </li>
           <li className="nav-li">
-            <Link href="/" className="fakebutton">
+            <Link to="/" className="fakebutton">
               <i className="fa-solid fa-map-pin"></i>Objekty
             </Link>
           </li>
           <li className="spcialli nav-li">
-            <Link href="/" className="instagram fakebutton instagram-tag">
+            <Link to="/" className="instagram fakebutton instagram-tag">
               <i className="fa-brands fa-instagram"></i>
             </Link>
           </li>
           <li className="nav-li">
-            <Link href="/" className="fakebutton">
+            <Link to="/login" className="fakebutton">
               <i className="fa-solid fa-right-to-bracket"></i>Login
             </Link>
           </li>
