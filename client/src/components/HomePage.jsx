@@ -4,14 +4,47 @@ import "../index.css";
 import * as THREE from "three";
 import { DirectionalLight, Texture, Scene } from "three";
 import modern from "../Modern.png";
-import Cube from "./Cube";
+import Cube from './Cube'
+import modernBoxLogo from '../modernBoxLogo.png'
 
 const HomePage = () => {
+let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
+
+function typeWriter(text, i, fnCallback) {
+  console.log(text);
+  if (i < text.length) {
+    document.querySelector("h1").innerHTML =
+      text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+    setTimeout(function () {
+      typeWriter(text, i + 1, fnCallback);
+    }, 200);
+  } else if (typeof fnCallback == "function") {
+    setTimeout(fnCallback, 2000);
+  }
+}
+function StartTextAnimation(i) {
+  if (typeof dataText[i] == "undefined") {
+    setTimeout(function () {
+      StartTextAnimation(0);
+    }, 2000);
+  }
+  if (i < dataText[i].length) {
+    typeWriter(dataText[i], 0, function () {
+      StartTextAnimation(i + 1);
+    });
+  }
+}
+StartTextAnimation(0);
+
+
+
   return (
     <div>
       <section className="top-nav">
         <h2>
           <Link className="logo" to="/">
+            <img src="../modernBoxLogo" alt="" />
             <i className="fa-solid fa-cube"></i> Modernbox Apartments
           </Link>
         </h2>
@@ -70,10 +103,10 @@ const HomePage = () => {
             które cechują się najlepszymi ocenami oraz wszystkimi zarezerowanymi
             terminami.
           </p>
-          <button></button>
+          <button className="home-page-button">Click</button>
         </div>
-        <Cube />
       </div>
+      <Cube />
       <div className="line"></div>
       <div className="scroll">
         <div className="scroll-indicator">⇩ Scroll ⇩</div>
