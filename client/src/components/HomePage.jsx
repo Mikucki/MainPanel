@@ -4,40 +4,38 @@ import "../index.css";
 import * as THREE from "three";
 import { DirectionalLight, Texture, Scene } from "three";
 import modern from "../Modern.png";
-import Cube from './Cube'
-import modernBoxLogo from '../modernBoxLogo.png'
+import Cube from "./Cube";
+import modernBoxLogo from "../modernBoxLogo.png";
 
 const HomePage = () => {
-let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
+  let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
 
-function typeWriter(text, i, fnCallback) {
-  console.log(text);
-  if (i < text.length) {
-    document.querySelector("h1").innerHTML =
-      text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+  function typeWriter(text, i, fnCallback) {
+    console.log(text);
+    if (i < text.length) {
+      document.querySelector("h1").innerHTML =
+        text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
 
-    setTimeout(function () {
-      typeWriter(text, i + 1, fnCallback);
-    }, 200);
-  } else if (typeof fnCallback == "function") {
-    setTimeout(fnCallback, 2000);
+      setTimeout(function () {
+        typeWriter(text, i + 1, fnCallback);
+      }, 200);
+    } else if (typeof fnCallback == "function") {
+      setTimeout(fnCallback, 2000);
+    }
   }
-}
-function StartTextAnimation(i) {
-  if (typeof dataText[i] == "undefined") {
-    setTimeout(function () {
-      StartTextAnimation(0);
-    }, 2000);
+  function StartTextAnimation(i) {
+    if (typeof dataText[i] == "undefined") {
+      setTimeout(function () {
+        StartTextAnimation(0);
+      }, 2000);
+    }
+    if (i < dataText[i].length) {
+      typeWriter(dataText[i], 0, function () {
+        StartTextAnimation(i + 1);
+      });
+    }
   }
-  if (i < dataText[i].length) {
-    typeWriter(dataText[i], 0, function () {
-      StartTextAnimation(i + 1);
-    });
-  }
-}
-StartTextAnimation(0);
-
-
+  StartTextAnimation(0);
 
   return (
     <div>
