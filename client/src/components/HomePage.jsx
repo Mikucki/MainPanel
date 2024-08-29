@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { DirectionalLight, Texture, Scene } from "three";
 import modern from "../Modern.png";
 import modernBoxLogo from "../modernBoxLogo.png";
+import tlomodernBox from "../Tło_ModernBox.png";
 import { useRef, useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

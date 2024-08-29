@@ -7,7 +7,9 @@ const LoginPage = () => {
       <div className="wrapper">
         <section className="top-nav">
           <h2>
-            <Link to="/" className="logo logo-login"></Link>
+            <Link className="logo" to="/">
+              ModernBox
+            </Link>
           </h2>
           <Link to="/" className="signin">
             <i className="fa-solid fa-right-to-bracket"></i> Sign In
