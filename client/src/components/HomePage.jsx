@@ -5,43 +5,56 @@ import * as THREE from "three";
 import { DirectionalLight, Texture, Scene } from "three";
 import modern from "../Modern.png";
 import modernBoxLogo from "../modernBoxLogo.png";
+import { useRef, useEffect } from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const HomePage = () => {
-  let dataText = ["Pracujemy", "Dzownimy", "Piszemy", "Sprzątamy", "Kupujemy"];
+  const dataText = [
+    "Pracujemy",
+    "Dzownimy",
+    "Piszemy",
+    "Sprzątamy",
+    "Kupujemy",
+  ];
+  const textRef = useRef(null); // Użycie ref do odniesienia się do elementu h1
 
   function typeWriter(text, i, fnCallback) {
-    console.log(text);
     if (i < text.length) {
-      document.querySelector("h1").innerHTML =
-        text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-
+      if (textRef.current) {
+        // Sprawdzenie czy ref nie jest null
+        textRef.current.innerHTML =
+          text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+      }
       setTimeout(function () {
         typeWriter(text, i + 1, fnCallback);
       }, 200);
-    } else if (typeof fnCallback == "function") {
+    } else if (typeof fnCallback === "function") {
       setTimeout(fnCallback, 2000);
     }
   }
+
   function StartTextAnimation(i) {
-    if (typeof dataText[i] == "undefined") {
+    if (typeof dataText[i] === "undefined") {
       setTimeout(function () {
         StartTextAnimation(0);
       }, 2000);
-    }
-    if (i < dataText[i].length) {
+    } else {
       typeWriter(dataText[i], 0, function () {
         StartTextAnimation(i + 1);
       });
     }
   }
-  StartTextAnimation(0);
+
+  useEffect(() => {
+    StartTextAnimation(0); // Uruchomienie animacji po załadowaniu komponentu
+  }, []);
 
   return (
     <div>
       <section className="top-nav">
         <h2>
           <Link className="logo" to="/">
-            <img src="../modernBoxLogo" alt="" />
+            ModernBox
           </Link>
         </h2>
         <input id="menu-toggle" type="checkbox" />
@@ -56,7 +69,7 @@ const HomePage = () => {
           </li>
           <li className="nav-li">
             <Link to="/" className="fakebutton">
-              <i className="fa-solid fa-map-pin"></i>Objekty
+              <i className="fa-solid fa-map-pin"></i> Objkety
             </Link>
           </li>
           <li className="spcialli nav-li">
@@ -66,7 +79,7 @@ const HomePage = () => {
           </li>
           <li className="nav-li">
             <Link to="/login" className="fakebutton">
-              <i className="fa-solid fa-right-to-bracket"></i>Login
+              <i className="fa-solid fa-right-to-bracket"></i> Login
             </Link>
           </li>
         </ul>
@@ -77,7 +90,10 @@ const HomePage = () => {
           <div className="text-writing">
             <div>
               <p className="title">My</p>
-              <h1 className="animation-js">Kupujemy</h1>
+              <h1 ref={textRef} className="animation-js">
+                Kupujemy
+              </h1>{" "}
+              {/* Przypisanie ref do h1 */}
             </div>
 
             <p className="title-2">ty zarabiasz</p>
@@ -139,7 +155,7 @@ const HomePage = () => {
                   <div className="card-icon">
                     <i className="fa-solid fa-hand-sparkles"></i>
                   </div>
-                  <h3 className="card-title">Czystość</h3>
+                  <h3 className="card-title">Sprzątanie</h3>
                 </div>
                 <p className="card-text">
                   Jesteśmy liderami w temacie czystość jeszcze żaden klient nie
