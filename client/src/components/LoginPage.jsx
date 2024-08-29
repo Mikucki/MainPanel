@@ -7,9 +7,7 @@ const LoginPage = () => {
       <div className="wrapper">
         <section className="top-nav">
           <h2>
-            <Link to="/" className="logo logo-login">
-              <i className="fa-solid fa-cube"></i> Modernbox Apartments
-            </Link>
+            <Link to="/" className="logo logo-login"></Link>
           </h2>
           <Link to="/" className="signin">
             <i className="fa-solid fa-right-to-bracket"></i> Sign In

@@ -6,9 +6,7 @@ const ProfilePage = () => {
     <div>
       <section className="top-nav">
         <h2>
-          <Link className="logo logo-login" href="../src/template.html">
-            <i className="fa-solid fa-cube"></i> Modernbox Apartments
-          </Link>
+          <Link className="logo logo-login" href="../src/template.html"></Link>
         </h2>
       </section>
       <div className="line"></div>

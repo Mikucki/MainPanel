@@ -4,7 +4,6 @@ import "../index.css";
 import * as THREE from "three";
 import { DirectionalLight, Texture, Scene } from "three";
 import modern from "../Modern.png";
-import Cube from "./Cube";
 import modernBoxLogo from "../modernBoxLogo.png";
 
 const HomePage = () => {
@@ -43,7 +42,6 @@ const HomePage = () => {
         <h2>
           <Link className="logo" to="/">
             <img src="../modernBoxLogo" alt="" />
-            <i className="fa-solid fa-cube"></i> Modernbox Apartments
           </Link>
         </h2>
         <input id="menu-toggle" type="checkbox" />
@@ -104,7 +102,6 @@ const HomePage = () => {
           <button className="home-page-button">Click</button>
         </div>
       </div>
-      <Cube />
       <div className="line"></div>
       <div className="scroll">
         <div className="scroll-indicator">⇩ Scroll ⇩</div>
