@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import tlomodernBox from "../Tło_ModernBox.png";
 
 const LoginPage = () => {
   return (

@@ -225,6 +225,18 @@ i {
   transform: rotate(-405deg);
 }
 
+.login-wrapper {
+  background-image: url("./Tło_ModernBox.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Opcjonalnie, aby tekst był lepiej widoczny */
+}
+
 .logo {
   font-size: 1em;
   margin-left: 0.7em;
